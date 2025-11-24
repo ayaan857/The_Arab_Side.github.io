@@ -9,7 +9,7 @@ const videos = [
   { id: "HJU6AvmYOwg", title: "ALL ON ONE PS4 PS5 GAMING STEERING-WHEEL AND SO ON / ps5 dubai / video games" },
   { id: "hbq5UwBKx3o", title: "Jayenamaz Islamic Decoration pieces or bohot kuch | Ghilaf e Kaaba | Ayaan Aamir" },
   { id: "PUXhYrePrpU", title: "Fahas Saudi Arabia 2024 🇸🇦 MVPI Test 2025 | How to clear for fahas 1st time |MVPI saudi arabia" } 
-  { id: "https://youtu.be/MEso_vtY78k", title: "Make your car perfect for MVPI test | MVPI or Fahas test kaisy pass krain | Mvpi test"
+  { id: "https://youtu.be/MEso_vtY78k", title: "Make your car perfect for MVPI test | MVPI or Fahas test kaisy pass krain | Mvpi test" }
 ];
 // -------------------------------
 
