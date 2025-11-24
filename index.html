@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Arab Side — Video Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>The Arab Side — Video Gallery</h1>
+      <p class="subtitle">A simple gallery — click a thumbnail to play (YouTube embeds)</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="gallery" class="gallery" aria-label="Video gallery">
+      <!-- Thumbnails inserted here by script.js -->
+    </section>
+  </main>
+
+  <!-- Modal / Lightbox -->
+  <div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="modal-content" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Close video">✕</button>
+      <div class="video-wrap" id="videoWrap">
+        <!-- iframe injected here -->
+      </div>
+      <div id="videoCaption" class="video-caption"></div>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> The Arab Side</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
