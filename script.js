@@ -1,15 +1,13 @@
 // -------------------------------
-// VIDEO LIST: add or remove entries here
-// Each item: { id: 'YouTubeID', title: 'Title' }
-// Example ID for https://www.youtube.com/watch?v=dQw4w9WgXcQ  -> id: 'dQw4w9WgXcQ'
+// VIDEO LIST
 const videos = [
-  { id: "keLSsQ-OqlY", title: "24 Hours at Sharjah Airport ✈️ Exploring Duty Free, Flight Delay Experience " },
+  { id: "keLSsQ-OqlY", title: "24 Hours at Sharjah Airport ✈️ Exploring Duty Free, Flight Delay Experience" },
   { id: "PTIeF0EXdCc", title: "Umrah Vlog 2025 | Taif To Makkah | Best Kabah Views | Haram Makkah" },
   { id: "MCRqSRtDfAk", title: "Saudi Arabia 2025 Real Estate & Rents | Jobs, Mega Projects & Property Prices" },
-  { id: "HJU6AvmYOwg", title: "ALL ON ONE PS4 PS5 GAMING STEERING-WHEEL AND SO ON / ps5 dubai / video games" },
-  { id: "hbq5UwBKx3o", title: "Jayenamaz Islamic Decoration pieces or bohot kuch | Ghilaf e Kaaba | Ayaan Aamir" },
-  { id: "PUXhYrePrpU", title: "Fahas Saudi Arabia 2024 🇸🇦 MVPI Test 2025 | How to clear for fahas 1st time |MVPI saudi arabia" } 
-  { id: "https://youtu.be/MEso_vtY78k", title: "Make your car perfect for MVPI test | MVPI or Fahas test kaisy pass krain | Mvpi test" }
+  { id: "HJU6AvmYOwg", title: "ALL ON ONE PS4 PS5 GAMING STEERING-WHEEL AND SO ON / PS5 Dubai / Video Games" },
+  { id: "hbq5UwBKx3o", title: "Jayenamaz Islamic Decoration Pieces | Ghilaf e Kaaba | Ayaan Aamir" },
+  { id: "PUXhYrePrpU", title: "Fahas Saudi Arabia 2024 🇸🇦 MVPI Test 2025 | How to clear for fahas first time" },
+  { id: "MEso_vtY78k", title: "Make your car perfect for MVPI test | Fahas test kaise pass karein | MVPI Guide" }
 ];
 // -------------------------------
 
@@ -64,7 +62,6 @@ function openModal(video){
 
   videoWrap.appendChild(iframe);
   modal.setAttribute("aria-hidden", "false");
-
   modalClose.focus();
 }
 
