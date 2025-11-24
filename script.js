@@ -3,12 +3,12 @@
 // Each item: { id: 'YouTubeID', title: 'Title' }
 // Example ID for https://www.youtube.com/watch?v=dQw4w9WgXcQ  -> id: 'dQw4w9WgXcQ'
 const videos = [
-  { id: "keLSsQ-OqlY", title: "Video 1" },
-  { id: "PTIeF0EXdCc", title: "Video 2" },
-  { id: "MCRqSRtDfAk", title: "Video 3" },
-  { id: "HJU6AvmYOwg", title: "Video 4" },
-  { id: "hbq5UwBKx3o", title: "Video 5" },
-  { id: "PUXhYrePrpU", title: "Video 6" }
+  { id: "keLSsQ-OqlY", title: "24 Hours at Sharjah Airport ✈️ Exploring Duty Free, Flight Delay Experience " },
+  { id: "PTIeF0EXdCc", title: "Umrah Vlog 2025 | Taif To Makkah | Best Kabah Views | Haram Makkah" },
+  { id: "MCRqSRtDfAk", title: "Saudi Arabia 2025 Real Estate & Rents | Jobs, Mega Projects & Property Prices" },
+  { id: "HJU6AvmYOwg", title: "ALL ON ONE PS4 PS5 GAMING STEERING-WHEEL AND SO ON / ps5 dubai / video games" },
+  { id: "hbq5UwBKx3o", title: "Jayenamaz Islamic Decoration pieces or bohot kuch | Ghilaf e Kaaba | Ayaan Aamir" },
+  { id: "PUXhYrePrpU", title: "Fahas Saudi Arabia 2024 🇸🇦 MVPI Test 2025 | How to clear for fahas 1st time |MVPI saudi arabia" }
 ];
 // -------------------------------
 
