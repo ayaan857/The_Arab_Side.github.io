@@ -1,82 +1,147 @@
 // -------------------------------
-// VIDEO LIST
-const videos = [
-  { id: "keLSsQ-OqlY", title: "24 Hours at Sharjah Airport ✈️ Exploring Duty Free, Flight Delay Experience" },
-  { id: "PTIeF0EXdCc", title: "Umrah Vlog 2025 | Taif To Makkah | Best Kabah Views | Haram Makkah" },
-  { id: "MCRqSRtDfAk", title: "Saudi Arabia 2025 Real Estate & Rents | Jobs, Mega Projects & Property Prices" },
-  { id: "HJU6AvmYOwg", title: "ALL ON ONE PS4 PS5 GAMING STEERING-WHEEL AND SO ON / PS5 Dubai / Video Games" },
-  { id: "hbq5UwBKx3o", title: "Jayenamaz Islamic Decoration Pieces | Ghilaf e Kaaba | Ayaan Aamir" },
-  { id: "PUXhYrePrpU", title: "Fahas Saudi Arabia 2024 🇸🇦 MVPI Test 2025 | How to clear for fahas first time" },
-  { id: "MEso_vtY78k", title: "Make your car perfect for MVPI test | Fahas test kaise pass karein | MVPI Guide" }
-];
+// YOUR REAL VIDEO LIST
 // -------------------------------
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const videos = [
+  { 
+    id: "keLSsQ-OqlY", 
+    title: "24 Hours at Sharjah Airport ✈️ Exploring Duty Free, Flight Delay Experience",
+    category: "KSA"
+  },
+  { 
+    id: "PTIeF0EXdCc", 
+    title: "Umrah Vlog 2025 | Taif To Makkah | Best Kabah Views | Haram Makkah",
+    category: "Islamic"
+  },
+  { 
+    id: "MCRqSRtDfAk", 
+    title: "Saudi Arabia 2025 Real Estate & Rents | Jobs, Mega Projects & Property Prices",
+    category: "KSA"
+  },
+  { 
+    id: "HJU6AvmYOwg", 
+    title: "ALL ON ONE PS4 PS5 Gaming Steering-Wheel / PS5 Dubai / Video Games",
+    category: "Gaming"
+  },
+  { 
+    id: "hbq5UwBKx3o", 
+    title: "Jayenamaz Islamic Decoration Pieces | Ghilaf e Kaaba | Ayaan Aamir",
+    category: "Islamic"
+  },
+  { 
+    id: "PUXhYrePrpU", 
+    title: "Fahas Saudi Arabia 2024 🇸🇦 How to Clear MVPI Test First Time",
+    category: "Car"
+  },
+  { 
+    id: "MEso_vtY78k", 
+    title: "Make Your Car Perfect for MVPI Test | Fahas Test Kaise Pass Karein",
+    category: "Car"
+  }
+];
 
-const gallery = document.getElementById("gallery");
-const modal = document.getElementById("videoModal");
-const modalBackdrop = document.getElementById("modalBackdrop");
-const modalClose = document.getElementById("modalClose");
-const videoWrap = document.getElementById("videoWrap");
-const videoCaption = document.getElementById("videoCaption");
 
-// Build gallery
-function buildGallery(){
+// -------------------------------
+// DOM ELEMENTS
+// -------------------------------
+
+const gallery = document.getElementById("video-gallery");
+const filterButtons = document.querySelectorAll("#filters .filter-btn");
+const modal = document.getElementById("video-modal");
+const videoFrame = document.getElementById("video-frame");
+const modalClose = document.getElementById("modal-close");
+const darkToggle = document.getElementById("dark-mode-toggle");
+
+
+// -------------------------------
+// GALLERY RENDER FUNCTION
+// -------------------------------
+
+function renderVideos(filter) {
   gallery.innerHTML = "";
-  videos.forEach((v, idx) => {
-    const card = document.createElement("article");
-    card.className = "card";
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-label", `Play ${v.title}`);
-    
-    const thumbUrl = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
 
-    card.innerHTML = `
-      <img loading="lazy" class="thumb" src="${thumbUrl}" alt="${v.title} thumbnail">
-      <div class="card-body">
-        <h3 class="title">${v.title}</h3>
-        <div class="meta">YouTube • ${v.id}</div>
-      </div>
-    `;
+  videos.forEach(v => {
+    if (filter === "all" || v.category === filter) {
+      const div = document.createElement("div");
+      div.classList.add("video-item");
 
-    card.addEventListener("click", () => openModal(v));
-    card.addEventListener("keypress", (e) => { 
-      if (e.key === "Enter" || e.key === " ") openModal(v); 
-    });
+      const img = document.createElement("img");
+      img.src = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
+      img.alt = v.title;
 
-    gallery.appendChild(card);
+      const caption = document.createElement("div");
+      caption.className = "title";
+      caption.textContent = v.title;
+
+      div.appendChild(img);
+      div.appendChild(caption);
+
+      div.addEventListener("click", () => openModal(v.id));
+
+      gallery.appendChild(div);
+    }
   });
 }
 
-// Open modal with YouTube embed
-function openModal(video){
-  videoWrap.innerHTML = "";
-  videoCaption.textContent = video.title || "";
 
-  const iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube.com/embed/${video.id}?rel=0&autoplay=1`;
-  iframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture");
-  iframe.setAttribute("allowfullscreen", "");
-  iframe.title = video.title || "YouTube video player";
+// -------------------------------
+// FILTERING
+// -------------------------------
 
-  videoWrap.appendChild(iframe);
-  modal.setAttribute("aria-hidden", "false");
-  modalClose.focus();
-}
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
 
-// Close modal
-function closeModal(){
-  modal.setAttribute("aria-hidden", "true");
-  videoWrap.innerHTML = "";
-}
-
-// Events
-modalClose.addEventListener("click", closeModal);
-modalBackdrop.addEventListener("click", closeModal);
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+    const category = btn.dataset.category;
+    renderVideos(category === "all" ? "all" : category);
+  });
 });
 
-// Init
-buildGallery();
+
+// -------------------------------
+// MODAL PLAYER
+// -------------------------------
+
+function openModal(videoId) {
+  videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  modal.style.display = "block";
+}
+
+modalClose.onclick = () => {
+  modal.style.display = "none";
+  videoFrame.src = "";
+};
+
+window.onclick = event => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    videoFrame.src = "";
+  }
+};
+
+
+// -------------------------------
+// DARK MODE
+// -------------------------------
+
+function setDarkMode(enabled) {
+  document.body.classList.toggle("dark-mode", enabled);
+  darkToggle.textContent = enabled ? "☀️" : "🌙";
+  localStorage.setItem("darkMode", enabled);
+}
+
+darkToggle.addEventListener("click", () => {
+  const isDark = document.body.classList.contains("dark-mode");
+  setDarkMode(!isDark);
+});
+
+const savedTheme = localStorage.getItem("darkMode");
+if (savedTheme === "true") setDarkMode(true);
+
+
+// -------------------------------
+// INITIAL LOAD
+// -------------------------------
+
+renderVideos("all");
