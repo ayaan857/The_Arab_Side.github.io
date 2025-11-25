@@ -1,14 +1,27 @@
-<body class="video">
-<header> ... </header>
-<main class="main">
-<div class="featured-video">
-<iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watch Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>The Arab Side – Video Player</h1>
+</header>
+
+<div class="video-container">
+    <iframe id="videoFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 </div>
-<div class="video-description">
-<h2>Loading...</h2>
-<p>Loading description...</p>
-<button class="btn">Subscribe to Channel</button>
+
+<div class="video-info">
+    <h2 id="videoTitle"></h2>
+    <p id="videoDescription"></p>
 </div>
-</main>
+
 <script src="script.js"></script>
+
 </body>
+</html>
+
