@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Arab Side - Home</title>
-    <meta name="description" content="Watch the latest videos on Saudi Arabia info, Islamic content, gaming, and car-related topics. Updated regularly with vlogs, guides, and tips.">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arab Side - Home</title>
+<meta name="description" content="Watch the latest videos from The Arab Side including KSA info, Islamic content, Gaming & Playstation, and Car-related tips. Stay updated with our video guides and vlogs.">
+<meta name="keywords" content="KSA info, Islamic content, gaming videos, car decoration, Saudi Arabia vlogs, video guides">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
     <div class="logo">The Arab Side</div>
     <nav>
@@ -19,139 +21,68 @@
 </header>
 
 <main>
-    <!-- Featured Video Section -->
-    <section id="featured-video">
-        <h2 id="video-title"><a href="" target="_blank">Loading Video...</a></h2>
-        <iframe id="main-video" width="900" height="506" src="" frameborder="0" allowfullscreen></iframe>
-    </section>
+<section id="main-video-section">
+    <h1 id="video-title">Loading...</h1>
+    <iframe id="main-video" width="800" height="450" src="" frameborder="0" allowfullscreen></iframe>
+</section>
 
-    <!-- Category Buttons -->
-    <section id="categories">
-        <button class="category-btn" data-category="all">All</button>
-        <button class="category-btn" data-category="ksa-info">KSA Info</button>
-        <button class="category-btn" data-category="islamic">Islamic</button>
-        <button class="category-btn" data-category="gaming">Gaming</button>
-        <button class="category-btn" data-category="car">Car</button>
-    </section>
-
-    <!-- Thumbnails -->
-    <section id="thumbnails">
-        <h3>Other Videos</h3>
-        <div id="thumbnail-container"></div>
-    </section>
+<section id="video-thumbnails">
+    <h2>More Videos</h2>
+    <div id="thumbnail-container" class="thumb-container"></div>
+</section>
 </main>
 
 <footer>
-    <p>© 2025 The Arab Side | Email: <a href="mailto:ayaanaamir170@gmail.com">ayaanaamir170@gmail.com</a></p>
+<p>© 2025 The Arab Side | Email: <a href="mailto:ayaanaamir170@gmail.com">ayaanaamir170@gmail.com</a></p>
 </footer>
 
-<script src="script.js"></script>
 <script>
-    // Video Data
-    const videos = [
-        {
-            title: "Saudi Real Estate 2025 - KSA Info",
-            url: "https://www.youtube.com/embed/MCRqSRtDfAk",
-            page: "saudi-real-estate-2025.html",
-            category: "ksa-info",
-            thumb: "https://img.youtube.com/vi/MCRqSRtDfAk/hqdefault.jpg"
-        },
-        {
-            title: "Umrah Vlog 2025 - Islamic Content",
-            url: "https://www.youtube.com/embed/PTIeF0EXdCc",
-            page: "umrah-vlog-2025.html",
-            category: "islamic",
-            thumb: "https://img.youtube.com/vi/PTIeF0EXdCc/hqdefault.jpg"
-        },
-        {
-            title: "Fahas Saudi 2024 - KSA Info",
-            url: "https://www.youtube.com/embed/PUXhYrePrpU",
-            page: "fahas-saudi-2024.html",
-            category: "ksa-info",
-            thumb: "https://img.youtube.com/vi/PUXhYrePrpU/hqdefault.jpg"
-        },
-        {
-            title: "MVPI Test Guide - KSA Info",
-            url: "https://www.youtube.com/embed/MEso_vtY78k",
-            page: "mvpi-test-guide.html",
-            category: "ksa-info",
-            thumb: "https://img.youtube.com/vi/MEso_vtY78k/hqdefault.jpg"
-        },
-        {
-            title: "Gaming PS5 Wheel - Gaming & Playstation",
-            url: "https://www.youtube.com/embed/HJU6AvmYOwg",
-            page: "ps5-gaming-wheel.html",
-            category: "gaming",
-            thumb: "https://img.youtube.com/vi/HJU6AvmYOwg/hqdefault.jpg"
-        },
-        {
-            title: "Car Decoration Ideas - Car Related",
-            url: "https://www.youtube.com/embed/1cS8XgJdZqk",
-            page: "car-decoration.html",
-            category: "car",
-            thumb: "https://img.youtube.com/vi/1cS8XgJdZqk/hqdefault.jpg"
-        },
-        {
-            title: "Sharjah Airport 24 Hours - KSA Info",
-            url: "https://www.youtube.com/embed/keLSsQ-OqlY",
-            page: "sharjah-airport-24-hours.html",
-            category: "ksa-info",
-            thumb: "https://img.youtube.com/vi/keLSsQ-OqlY/hqdefault.jpg"
-        }
-    ];
+// ======= Video Data =======
+const videos = [
+  { title: "Saudi Real Estate 2025 - KSA Info", page: "saudi-real-estate-2025.html", thumb: "https://img.youtube.com/vi/MCRqSRtDfAk/hqdefault.jpg" },
+  { title: "Umrah Vlog 2025 - Islamic Content", page: "umrah-vlog-2025.html", thumb: "https://img.youtube.com/vi/PTIeF0EXdCc/hqdefault.jpg" },
+  { title: "Fahas Saudi 2024 - KSA Info", page: "fahas-saudi-2024.html", thumb: "https://img.youtube.com/vi/PUXhYrePrpU/hqdefault.jpg" },
+  { title: "MVPI Test Guide - KSA Info", page: "mvpi-test-guide.html", thumb: "https://img.youtube.com/vi/MEso_vtY78k/hqdefault.jpg" },
+  { title: "Gaming PS5 Wheel - Gaming & Playstation", page: "ps5-gaming-wheel.html", thumb: "https://img.youtube.com/vi/HJU6AvmYOwg/hqdefault.jpg" },
+  { title: "Car Decoration Ideas - Car Related", page: "car-decoration.html", thumb: "https://img.youtube.com/vi/1cS8XgJdZqk/hqdefault.jpg" },
+  { title: "Sharjah Airport 24 Hours - KSA Info", page: "sharjah-airport-24-hours.html", thumb: "https://img.youtube.com/vi/keLSsQ-OqlY/hqdefault.jpg" }
+];
 
-    let currentIndex = 0;
+let currentIndex = 0;
 
-    function showVideo(index) {
-        const video = videos[index];
-        const iframe = document.getElementById('main-video');
-        const title = document.getElementById('video-title');
-        iframe.src = video.url;
-        title.innerHTML = `<a href="${video.page}" target="_blank">${video.title}</a>`;
-    }
+// ======= Show Main Video =======
+function showVideo(index){
+  const video = videos[index];
+  const iframe = document.getElementById('main-video');
+  const title = document.getElementById('video-title');
+  
+  iframe.src = `https://www.youtube.com/embed/${video.thumb.split("/")[4]}`;
+  title.innerHTML = `<a href="${video.page}" target="_blank">${video.title}</a>`;
+}
 
-    // Initial video
-    showVideo(currentIndex);
+// ======= Rotate Videos Every 8s =======
+showVideo(currentIndex);
+setInterval(() => {
+  currentIndex++;
+  if(currentIndex >= videos.length) currentIndex = 0;
+  showVideo(currentIndex);
+}, 8000);
 
-    // Rotate video every 8 seconds
-    setInterval(() => {
-        currentIndex++;
-        if(currentIndex >= videos.length) currentIndex = 0;
-        showVideo(currentIndex);
-        generateThumbnails(); // Update thumbnails for new video
-    }, 8000);
-
-    // Generate thumbnails (excluding current main video)
-    function generateThumbnails(category="all") {
-        const thumbContainer = document.getElementById('thumbnail-container');
-        thumbContainer.innerHTML = '';
-        videos.forEach((video, index) => {
-            if(index !== currentIndex && (category === "all" || video.category === category)) {
-                const thumbDiv = document.createElement('div');
-                thumbDiv.className = "thumb-item";
-                thumbDiv.innerHTML = `
-                    <a href="${video.page}">
-                        <img src="${video.thumb}" alt="${video.title}">
-                        <p>${video.title}</p>
-                    </a>
-                `;
-                thumbContainer.appendChild(thumbDiv);
-            }
-        });
-    }
-
-    // Initial thumbnails
-    generateThumbnails();
-
-    // Category buttons
-    const buttons = document.querySelectorAll('.category-btn');
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const cat = btn.getAttribute('data-category');
-            generateThumbnails(cat);
-        });
-    });
+// ======= Generate Thumbnails =======
+const thumbContainer = document.getElementById('thumbnail-container');
+videos.forEach((video,index)=>{
+  const div = document.createElement('div');
+  div.className = "thumb-item";
+  div.innerHTML = `
+    <a href="${video.page}" target="_blank">
+      <img src="${video.thumb}" alt="${video.title}">
+      <p>${video.title}</p>
+    </a>
+  `;
+  thumbContainer.appendChild(div);
+});
 </script>
+
 </body>
 </html>
 
