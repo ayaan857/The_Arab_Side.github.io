@@ -39,11 +39,13 @@ const videos = [
 
 let currentIndex = 0;
 
-// Show video function
+// Show a video
 function showVideo(index) {
     const video = videos[index];
     const iframe = document.getElementById('main-video');
     const title = document.getElementById('video-title');
+
+    if (!iframe || !title) return; // stop if elements not found
 
     iframe.src = video.url;
     title.innerHTML = `<a href="${video.page}" target="_blank">${video.title}</a>`;
@@ -52,10 +54,9 @@ function showVideo(index) {
 // Initial video
 showVideo(currentIndex);
 
-// Rotate video every 8 seconds
+// Rotate videos every 8 seconds
 setInterval(() => {
     currentIndex++;
-    if(currentIndex >= videos.length) currentIndex = 0;
+    if (currentIndex >= videos.length) currentIndex = 0;
     showVideo(currentIndex);
 }, 8000);
-
