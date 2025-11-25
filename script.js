@@ -79,4 +79,39 @@ videos.forEach((video, index) => {
     `;
     thumbContainer.appendChild(thumbDiv);
 });
+// --- Existing code for big video rotation ---
+let currentIndex = 0;
+
+function showVideo(index) {
+    const video = videos[index];
+    const iframe = document.getElementById('main-video');
+    const title = document.getElementById('video-title');
+
+    iframe.src = video.url;
+    title.innerHTML = `<a href="${video.page}" target="_blank">${video.title}</a>`;
+}
+
+showVideo(currentIndex);
+
+setInterval(() => {
+    currentIndex++;
+    if(currentIndex >= videos.length) currentIndex = 0;
+    showVideo(currentIndex);
+}, 8000);
+
+// --- ADD THIS AT THE END: Generate thumbnails ---
+const thumbContainer = document.getElementById('thumbnail-container');
+thumbContainer.innerHTML = ''; // Clear any existing content
+
+videos.forEach((video, index) => {
+    const thumbDiv = document.createElement('div');
+    thumbDiv.className = "thumb-item";
+    thumbDiv.innerHTML = `
+        <a href="${video.page}" target="_blank">
+            <img src="https://img.youtube.com/vi/${video.url.split('/').pop()}/hqdefault.jpg" alt="${video.title}">
+            <p>${video.title}</p>
+        </a>
+    `;
+    thumbContainer.appendChild(thumbDiv);
+});
 
