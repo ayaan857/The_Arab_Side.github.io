@@ -4,8 +4,9 @@
   --text-color: #222222;
   --primary-color: #1a73e8;
   --secondary-color: #555555;
-  --header-bg: #fff9e6; /* Soft cream for header */
-  --neon-color: #00f0ff; /* Neon blue for glow */
+  --header-bg: #fff9e6; /* soft cream for header */
+  --neon-color: #00f0ff; /* bright neon blue */
+  --neon-outline: #001f3f; /* dark navy blue outline */
 }
 
 body.dark-mode {
@@ -30,7 +31,6 @@ body {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: var(--bg-color);
-  color: var(--neon-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,17 +38,17 @@ body {
   font-weight: bold;
   font-size: 3em;
   text-align: center;
+  color: var(--neon-color);
   text-shadow:
-      0 0 5px var(--neon-color),
-      0 0 10px var(--neon-color),
-      0 0 20px var(--neon-color),
-      0 0 40px #00ffff;
+      0 0 2px var(--neon-outline),
+      0 0 4px var(--neon-outline),
+      0 0 8px var(--neon-color),
+      0 0 16px var(--neon-color);
   z-index: 9999;
   animation: fadeOut 3s ease forwards;
   animation-delay: 2s; /* visible for 2s */
 }
 
-/* Fade out animation */
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; visibility: hidden; }
@@ -59,10 +59,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 4em;
+  padding: 1em 4em; /* wider padding */
   background-color: var(--header-bg);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   animation: slideIn 1s ease-out;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 0.7em;
 }
 
 .site-title {
@@ -71,19 +84,10 @@ header {
   font-size: 2em;
   color: var(--neon-color);
   text-shadow:
-      0 0 2px #00f0ff,
-      0 0 5px #00f0ff,
-      0 0 10px #00f0ff,
-      0 0 20px #00ffff;
-}
-
-/* ------------------ LOGO ------------------ */
-.logo {
-  width: 60px;
-  height: 60px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin-right: 0.7em;
+      0 0 2px var(--neon-outline),
+      0 0 4px var(--neon-outline),
+      0 0 8px var(--neon-color),
+      0 0 16px var(--neon-color);
 }
 
 /* ------------------ DARK MODE ------------------ */
@@ -142,12 +146,19 @@ header {
   position: absolute;
   bottom: 0;
   background: rgba(0,0,0,0.6);
-  color: #fff;
+  color: var(--neon-color);
+  font-family: 'Anton', sans-serif;
+  font-weight: bold;
   width: 100%;
   padding: 0.5em;
   box-sizing: border-box;
   font-size: 0.9em;
   border-radius: 0 0 4px 4px;
+  text-shadow:
+      0 0 2px var(--neon-outline),
+      0 0 4px var(--neon-outline),
+      0 0 8px var(--neon-color),
+      0 0 12px var(--neon-color);
 }
 
 /* ------------------ MODAL ------------------ */
