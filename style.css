@@ -1,12 +1,12 @@
 /* ------------------ GENERAL ------------------ */
 :root {
   --bg-color: #ffffff;
-  --text-color: #222222;
+  --text-color: #222210;
   --primary-color: #1a73e8;
   --secondary-color: #555555;
-  --header-bg: #fff9e6; /* soft cream for header */
+  --header-bg: #fff9e6; /* soft yellow for header */
   --neon-color: #00f0ff; /* bright neon blue */
-  --neon-outline: #001f3f; /* dark navy blue outline */
+  --neon-outline: #001f3f; /* black for outline */
 }
 
 body.dark-mode {
