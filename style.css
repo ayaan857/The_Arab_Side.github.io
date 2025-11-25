@@ -1,0 +1,84 @@
+/* GLOBAL STYLE */
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFD700; /* Gold Yellow */
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: black;
+    color: yellow;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+header p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.boy-img {
+    width: 130px;
+    height: auto;
+}
+
+/* NAVIGATION */
+.nav-bar {
+    background: #222;
+    padding: 12px;
+    text-align: center;
+}
+
+.nav-bar a {
+    color: yellow;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.nav-bar a.active {
+    text-decoration: underline;
+}
+
+/* VIDEO CARDS */
+.section-title {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 32px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-card {
+    background: black;
+    padding: 15px;
+    border-radius: 10px;
+    color: yellow;
+    text-decoration: none;
+}
+
+.video-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-card h3 {
+    text-align: center;
+    margin-top: 10px;
+}
